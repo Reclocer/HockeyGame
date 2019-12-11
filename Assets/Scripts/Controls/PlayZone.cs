@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class PlayZone : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Color _gizmosColor = Color.red;
+    [SerializeField] private Vector2 _center;
+    [SerializeField] private Vector2 _size;
+    private Rect _rect;
+    public bool IsOutOfBounds(Vector2 pos)
     {
-        
+        Vector2 pivotOfRect = _center - (_size / 2);
+        _rect = new Rect(pivotOfRect, _size);
+        return !_rect.Contains(pos);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDrawGizmos()
     {
-        
+        Gizmos.color = _gizmosColor;
+        Gizmos.DrawCube(_center, _size);
     }
+
 }
