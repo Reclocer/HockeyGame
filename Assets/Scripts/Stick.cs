@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Stick : MonoBehaviour
-{
-    //[SerializeField] private Collider2D _playerPlayZone;    
+{       
     private Vector2 _transformPosition;
     private Vector2 _startPosition;
     private Rigidbody2D _rigidbody2D;
@@ -43,7 +42,7 @@ public class Stick : MonoBehaviour
         _userControl = userControl;
     }
 
-    private void GoToStartPosition()
+    public void GoToStartPosition()
     {
         transform.position = _startPosition;
     }

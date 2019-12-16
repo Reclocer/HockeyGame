@@ -8,6 +8,7 @@ public class PlayZone : MonoBehaviour
     [SerializeField] private Vector2 _center;
     [SerializeField] private Vector2 _size;
     private Rect _rect;
+
     public bool IsOutOfBounds(Vector2 pos)
     {
         Vector2 pivotOfRect = _center - (_size / 2);

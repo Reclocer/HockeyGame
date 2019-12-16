@@ -8,6 +8,15 @@ public class Puck : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb;
     public Rigidbody2D Rb => _rb;
 
+    [SerializeField] private Transform _puckStartPositionBlue;
+    [SerializeField] private Transform _puckStartPositionRed;
+    
+    public void GoToStartPositionBlue()
+    {
+        transform.position = _puckStartPositionBlue.position;
+    }
+
+    #region Custom Inspector
     [ContextMenu("Show Rb Info")] //даем возможность вызывать метод из инспектора
     public void ShowRbInfo()
     {
@@ -19,4 +28,5 @@ public class Puck : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    #endregion
 }

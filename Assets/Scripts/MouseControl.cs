@@ -24,10 +24,12 @@ public class MouseControl : MonoBehaviour, IUserControl
 
     private void MoveStickWithCursor()
     {
-        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (_playZone.IsOutOfBounds(mousePos))
+        {
             return;
+        }
 
         _cursorPosition = mousePos;
     }    
