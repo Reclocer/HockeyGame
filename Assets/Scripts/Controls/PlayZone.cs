@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayZone : MonoBehaviour
-{
+{    
     [SerializeField] private Color _gizmosColor = Color.red;
     [SerializeField] private Vector2 _center;
     [SerializeField] private Vector2 _size;

@@ -7,13 +7,13 @@ public class SceneManager : MonoBehaviour
     [SerializeField] private Gate _blueGate;
     [SerializeField] private Gate _redGate;
 
-    void Start()
-    {
-        //_blueGate.OnGoal += 
-    }
+    //void Start()
+    //{
+    //    _blueGate.OnGoal += GoToStartPosition;
+    //}
     
-    void Update()
-    {
-        
-    }
+    //private void GoToStartPosition()
+    //{
+         
+    //}
 }

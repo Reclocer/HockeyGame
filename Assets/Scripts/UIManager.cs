@@ -1,18 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static UIManager Instance { get; private set; }
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private Text _playerNameText;
+
+
+    private void Awake()
     {
-        
+        if (Instance == null)
+            Instance = this;
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    public void SetPlayerName(string name)
+    {
+        _playerNameText.text = name;
     }
 }

@@ -16,7 +16,7 @@ public class PuckManipulatorEditor : Editor
         if(GUILayout.Button("Add force to Puck"))
         {
             //действия при нажатии на кнопку...
-            puck.Rb.AddForce(_origin * _power);
+            puck.Rigidbody.AddForce(_origin * _power);
         }
     }
 }

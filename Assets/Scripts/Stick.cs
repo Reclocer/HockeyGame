@@ -7,7 +7,7 @@ public class Stick : MonoBehaviour
     private Vector2 _transformPosition;
     private Vector2 _startPosition;
     private Rigidbody2D _rigidbody2D;
-    [SerializeField] private int _stickSense = 10;
+    [SerializeField] private int _stickSense = 12;
     private IUserControl _userControl;
 
     void Start()
@@ -29,7 +29,7 @@ public class Stick : MonoBehaviour
     }
 
     /// <summary>
-    /// Sinleton - Set control system
+    /// Set stick control system
     /// </summary>
     /// <param name="userControl"></param>
     private void SetControl(IUserControl userControl)

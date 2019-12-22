@@ -12,9 +12,13 @@ public class Gate : MonoBehaviour
     [SerializeField] private Text _score;
     private int _scoreI = 0;
     public int ScoreI => _scoreI;
+
     private string _scoreS;
     public string ScoreS => _scoreS;
-    public event Action OnGoal = () => { };
+    public event Action<Gate> OnGoal = (thisGate) => { };
+
+    [SerializeField] private Transform _puckStartPosition;
+    public Transform PuckStartPosition => _puckStartPosition;
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,7 +27,7 @@ public class Gate : MonoBehaviour
             _scoreI++;
             _scoreS = _scoreI.ToString();
             _score.text = _scoreS;
-            OnGoal();
+            OnGoal(this);
         }
     }
 }
