@@ -18,11 +18,6 @@ public class Stick : MonoBehaviour
         //Cursor.visible = false;
     }
 
-    void Update()
-    {
-
-    }
-
     private void FixedUpdate()
     {
         _rigidbody2D.velocity = (_userControl.CursorPosition - transform.position) * _stickSense; // оптимизировать?

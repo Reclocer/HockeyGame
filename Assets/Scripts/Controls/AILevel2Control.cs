@@ -11,7 +11,6 @@ public class AILevel2Control : AbstractStickControl
     [SerializeField] private float _verticalStickSense = 2;
     [SerializeField] private TrigerTeleport[] _trigerTeleports;
 
-
     private void Start()
     {
         _stick = GetComponent<Stick>();
@@ -36,17 +35,12 @@ public class AILevel2Control : AbstractStickControl
             }
         }
         else if (_playZone.IsOutOfBounds(_targetPosition))
-        {
-            //Debug.Log("go to center");
+        {            
             _targetPosition.y = transform.position.y - _verticalStickSense;           
         }
-       
-
 
         _targetPosition.x = puckTransformPosition.x;
-
-        //Debug.Log(_targetPosition.y);
-
+        
         if (_playZone.IsOutOfBounds(_targetPosition))
         {
             return;

@@ -10,26 +10,10 @@ public class TrigerTeleport : MonoBehaviour
     [SerializeField] private Gate _redGate;
     public event Action<Gate> OnTriggerTeleportEnter = (gate) => { };
 
-    
-    void Start()
-    {
-        
-    }
-    
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision == _puck)
-        {
-            // оптимизировать!!! (Puck.GoToStartPosition())
-            //_puck.transform.position = _puckStartPosition.position;
-            //_puck.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            //_puck.GetComponent<Rigidbody2D>().angularVelocity = 0;
-
+        {          
             OnTriggerTeleportEnter(_redGate);
         }
     }
