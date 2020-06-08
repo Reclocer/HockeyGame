@@ -6,21 +6,21 @@ public class Stick : MonoBehaviour
 {       
     private Vector2 _transformPosition;
     private Vector2 _startPosition;
-    private Rigidbody2D _rigidbody2D;
+    private Rigidbody2D _rigidbody;
     [SerializeField] private int _stickSense = 12;
     private IUserControl _userControl;
 
     void Start()
     {
         _startPosition = transform.position;
-        _rigidbody2D = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
         _userControl = GetComponent<IUserControl>();
         //Cursor.visible = false;
     }
 
     private void FixedUpdate()
     {
-        _rigidbody2D.velocity = (_userControl.CursorPosition - transform.position) * _stickSense; // оптимизировать?
+        _rigidbody.velocity = (_userControl.CursorPosition - transform.position) * _stickSense; // оптимизировать?
     }
 
     /// <summary>
@@ -40,5 +40,7 @@ public class Stick : MonoBehaviour
     public void GoToStartPosition()
     {
         transform.position = _startPosition;
+        _rigidbody.velocity = Vector2.zero;
+        _rigidbody.angularVelocity = 0;
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(FieldGenerator))]
@@ -8,9 +9,9 @@ public class FieldGeneratorEditor : Editor
     {
         DrawDefaultInspector();
 
-        FieldGenerator generator = (FieldGenerator) target;
+        FieldGenerator generator = (FieldGenerator)target;
 
-        if(GUILayout.Button("Create field!"))
+        if (GUILayout.Button("Create field!"))
         {
             generator.GenerateField();
         }
@@ -21,3 +22,4 @@ public class FieldGeneratorEditor : Editor
         }
     }
 }
+#endif
