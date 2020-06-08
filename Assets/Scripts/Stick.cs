@@ -27,7 +27,7 @@ public class Stick : MonoBehaviour
     /// Set stick control system
     /// </summary>
     /// <param name="userControl"></param>
-    private void SetControl(IUserControl userControl)
+    public void SetControl(IUserControl userControl)
     {
         if (_userControl != null)
         {
